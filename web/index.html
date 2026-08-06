@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgentShield AI — حارس التنفيذ لوكلاء الذكاء الاصطناعي</title>
+<meta name="description" content="طبقة حماية في الزمن الحقيقي تفحص كل قرار يتخذه وكيل الذكاء الاصطناعي قبل تنفيذه، وتوقف الكوارث المالية قبل حدوثها." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <img src="assets/logo.svg" alt="" class="brand-mark" width="28" height="28" />
+      AgentShield<span class="brand-suffix">AI</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">كيف يعمل</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#trust">الثقة والأمان</a>
+      <a href="about.html">من نحن</a>
+      <a href="/dashboard.html" class="nav-cta">لوحة التحكم</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Runtime Guardrail Middleware</p>
+    <h1>وكلاؤك الذكيون يتحركون بسرعة.<br>خلّي أحداً يراقب كل حركة قبل تنفيذها.</h1>
+    <p class="hero-sub">
+      AgentShield يعترض كل إجراء يقترحه وكيل الذكاء الاصطناعي — دفعة، تذكرة، صفقة — يمنحه درجة مخاطرة
+      خلال أجزاء من الثانية، ويقرر: مرّر، اعرض على إنسان، أو امنع تماماً. كل قرار موقّع تشفيرياً في سجل لا يُحرَّف.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">ابدأ تجربة مجانية</button>
+      <a class="btn btn-ghost" href="/dashboard.html">شاهد اللوحة الحية →</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="عرض حي لقرارات المراقبة">
+    <div class="ticker-frame">
+      <div class="ticker-head">
+        <span class="dot dot-live"></span> سجل القرارات — حي
+      </div>
+      <div id="hero-ticker" class="ticker-body"></div>
+    </div>
+  </div>
+</header>
+
+<section class="strip">
+  <div class="strip-item"><strong>&lt;120ms</strong><span>زمن استجابة المراقبة</span></div>
+  <div class="strip-item"><strong>SHA-256</strong><span>سجل مُشفّر غير قابل للتلاعب</span></div>
+  <div class="strip-item"><strong>0/40/70</strong><span>عتبات القرار: مرّر / راجع / امنع</span></div>
+  <div class="strip-item"><strong>Slack + WhatsApp</strong><span>تنبيه فوري للمراجعة البشرية</span></div>
+</section>
+
+<section id="how" class="section">
+  <h2 class="section-title">من الطلب إلى القرار — في مسار واحد</h2>
+  <div class="flow">
+    <div class="flow-step">
+      <span class="flow-tag">الوكيل</span>
+      <p>يرسل الإجراء المقترح (دفعة، تعديل، رسالة) إلى AgentShield قبل تنفيذه فعلياً.</p>
+    </div>
+    <div class="flow-step">
+      <span class="flow-tag">التقييم</span>
+      <p>محرك المخاطر يحسب درجة من 0–100 بناءً على القيمة المالية، الانحراف السلوكي عن نمط الوكيل، ومعدل الطلبات.</p>
+    </div>
+    <div class="flow-step">
+      <span class="flow-tag">القرار</span>
+      <p class="verdict"><span class="pill pill-safe">أقل من 40 — مرّر تلقائياً</span><span class="pill pill-hold">40–70 — مراجعة بشرية</span><span class="pill pill-block">أعلى من 70 — حظر فوري</span></p>
+    </div>
+    <div class="flow-step">
+      <span class="flow-tag">السجل</span>
+      <p>كل قرار يُختم بهاش SHA-256 مرتبط بالقرار السابق — دليل تدقيق لا يمكن تعديله لاحقاً.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section pricing-section">
+  <h2 class="section-title">أسعار تناسب حجم وكلائك</h2>
+  <p class="section-sub">كل الخطط تشمل محرك المخاطرة والسجل المشفّر. الفرق في السقوف والدعم.</p>
+
+  <div class="billing-toggle" role="group" aria-label="دورة الفوترة">
+    <button class="toggle-btn active" data-cycle="monthly">شهري</button>
+    <button class="toggle-btn" data-cycle="yearly">سنوي <span class="save-badge">وفّر ~17%</span></button>
+  </div>
+
+  <div class="plans">
+    <article class="plan-card">
+      <h3>Starter</h3>
+      <p class="plan-desc">لفريق يشغّل وكيلاً واحداً أو اثنين في الإنتاج.</p>
+      <p class="price">
+        <span class="price-amount" data-monthly="29" data-yearly="290">$29</span>
+        <span class="price-period">/شهرياً</span>
+      </p>
+      <ul class="features">
+        <li>حتى 10,000 عملية مراقبة/شهر</li>
+        <li>سقف تعويض بالأرصدة: $100</li>
+        <li>تنبيهات Slack</li>
+        <li>سجل تدقيق مشفّر كامل</li>
+      </ul>
+      <button class="btn btn-outline plan-cta" data-tier="starter">اشترك الآن</button>
+    </article>
+
+    <article class="plan-card plan-featured">
+      <span class="featured-badge">الأكثر اختياراً</span>
+      <h3>Pro</h3>
+      <p class="plan-desc">لفرق تشغّل عدة وكلاء عبر عمليات مالية أو تشغيلية حساسة.</p>
+      <p class="price">
+        <span class="price-amount" data-monthly="99" data-yearly="990">$99</span>
+        <span class="price-period">/شهرياً</span>
+      </p>
+      <ul class="features">
+        <li>حتى 100,000 عملية مراقبة/شهر</li>
+        <li>سقف تعويض نقدي: $100 + أرصدة $300</li>
+        <li>Slack + WhatsApp</li>
+        <li>بصمة سلوكية لكل وكيل</li>
+        <li>قاطع الدائرة الذاتي</li>
+      </ul>
+      <button class="btn btn-primary plan-cta" data-tier="pro">اشترك الآن</button>
+    </article>
+
+    <article class="plan-card">
+      <h3>Enterprise</h3>
+      <p class="plan-desc">لعمليات واسعة تتطلب حدود مخصصة وSLA مؤسسي.</p>
+      <p class="price">
+        <span class="price-amount" data-monthly="299" data-yearly="2990">$299</span>
+        <span class="price-period">/شهرياً وما فوق</span>
+      </p>
+      <ul class="features">
+        <li>حجم مراقبة غير محدود</li>
+        <li>سقف تعويض نقدي: $500 + أرصدة $1,000</li>
+        <li>مراجعة يدوية مخصّصة للحالات الحرجة</li>
+        <li>دعم مخصص + SLA موقّع</li>
+      </ul>
+      <button class="btn btn-outline plan-cta" data-tier="enterprise">تواصل مع المبيعات</button>
+    </article>
+  </div>
+  <p class="pricing-footnote">
+    الأسعار بالدولار الأمريكي. التعويض النقدي مشروط بمراجعة السجل ويخضع لشروط الخدمة —
+    <a href="/LEGAL_TERMS.md">راجع شروط الخدمة الكاملة</a>.
+  </p>
+</section>
+
+<section id="trust" class="section trust-section">
+  <h2 class="section-title">ما الذي يمنحك الثقة؟</h2>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <h4>سجل لا يُحرَّف</h4>
+      <p>كل قرار مربوط بهاش القرار السابق (سلسلة Merkle). أي تعديل لاحق على سجل قديم يكسر السلسلة ويظهر فوراً في التحقق.</p>
+    </div>
+    <div class="trust-card">
+      <h4>مراجعة بشرية حين يلزم</h4>
+      <p>القرارات متوسطة الخطورة توقَف تلقائياً وتُرسَل لفريقك عبر Slack أو WhatsApp — لا شيء حرج يمر دون إنسان في الحلقة.</p>
+    </div>
+    <div class="trust-card">
+      <h4>تعويض واضح الحدود</h4>
+      <p>لا وعود غامضة. أرصدة خدمة تلقائية، وتعويض نقدي محدود وخاضع لمراجعة — كل ذلك موثّق في شروط الخدمة.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>AgentShield AI — Runtime Guardrail Middleware</span>
+    <div class="footer-links">
+      <a href="about.html">من نحن</a>
+      <a href="/LEGAL_TERMS.md">شروط الخدمة</a>
+      <a href="/dashboard.html">لوحة التحكم</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
