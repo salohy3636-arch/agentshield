@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لوحة تحكم AgentShield</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="console-body">
+
+<div class="console-shell">
+  <aside class="console-side">
+    <a href="/" class="brand"><img src="assets/logo.svg" alt="" class="brand-mark" width="28" height="28" />AgentShield<span class="brand-suffix">AI</span></a>
+    <nav class="side-nav">
+      <span class="side-nav-item active">المراقبة الحية</span>
+      <span class="side-nav-item">سجل التدقيق</span>
+      <span class="side-nav-item">الاشتراك</span>
+    </nav>
+    <div class="side-status" id="ledger-status">
+      <span class="dot dot-pending"></span> جارٍ التحقق من السجل…
+    </div>
+  </aside>
+
+  <main class="console-main">
+    <header class="console-header">
+      <div>
+        <h1>المراقبة الحية</h1>
+        <p class="console-sub">قرارات محرك المخاطرة لحظة بلحظة عبر كل الوكلاء المتصلين.</p>
+      </div>
+      <div class="console-actions">
+        <button id="seed-btn" class="btn btn-outline btn-sm">تعبئة بيانات تجريبية</button>
+        <button id="refresh-btn" class="btn btn-primary btn-sm">تحديث الآن</button>
+      </div>
+    </header>
+
+    <section class="stat-cards" id="stat-cards">
+      <div class="stat-card"><span class="stat-label">إجمالي الإجراءات</span><span class="stat-value" id="stat-total">—</span></div>
+      <div class="stat-card safe"><span class="stat-label">مررت</span><span class="stat-value" id="stat-passed">—</span></div>
+      <div class="stat-card hold"><span class="stat-label">قيد المراجعة</span><span class="stat-value" id="stat-held">—</span></div>
+      <div class="stat-card block"><span class="stat-label">محظورة</span><span class="stat-value" id="stat-blocked">—</span></div>
+      <div class="stat-card"><span class="stat-label">متوسط درجة الخطورة</span><span class="stat-value" id="stat-avg">—</span></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>اتجاه درجة الخطورة</h2>
+        <span class="panel-count" id="chart-legend">آخر 30 قراراً</span>
+      </div>
+      <canvas id="risk-chart" class="risk-chart" height="140"></canvas>
+    </section>
+
+    <section class="panel" id="approvals-panel">
+      <div class="panel-head">
+        <h2>بانتظار المراجعة البشرية</h2>
+        <span class="panel-count" id="approvals-count">0</span>
+      </div>
+      <div id="approvals-list" class="approvals-list">
+        <p class="empty-state">لا توجد إجراءات بانتظار المراجعة حالياً.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>سجل القرارات</h2>
+        <button id="verify-btn" class="btn btn-ghost btn-sm">تحقق من سلامة السجل</button>
+      </div>
+      <div class="table-wrap">
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>الوقت</th>
+              <th>الوكيل</th>
+              <th>الإجراء</th>
+              <th>الدرجة</th>
+              <th>القرار</th>
+              <th>هاش الإدخال</th>
+            </tr>
+          </thead>
+          <tbody id="ledger-body">
+            <tr><td colspan="6" class="empty-state">لا توجد بيانات بعد — اضغط "تعبئة بيانات تجريبية".</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>الاشتراك</h2></div>
+      <div id="account-box" class="account-box">
+        <p class="empty-state">جارٍ تحميل بيانات الحساب…</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>window.AGENTSHIELD_API_BASE = "";</script>
+<script src="assets/app.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>
